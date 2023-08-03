@@ -33,9 +33,9 @@ const routes = [
         name: "Produk",
         component: Produk,
         beforeEnter: (to, from, next) => {
-            const loggedInUser = user.find((user) => user.loggedInUser == true);
+            const loggedInUser = true;
             if (loggedInUser) {
-                next("/produk");
+                next();
             } else {
                 next("/login")
             }

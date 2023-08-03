@@ -24,7 +24,8 @@
         data() {
             return {
                 username: '',
-                password: ''
+                password: '',
+                isLoggedIn: true
             };
         },
         methods: {
@@ -32,6 +33,7 @@
                 const foundUser = user.find(user => user.username === this.username && user.password === this.password);
                 if (foundUser) {
                     alert('Login Berhasil');
+                    this.$router.push('/produk');
                 } else {
                     alert('Username atau Password salah');
                 }
